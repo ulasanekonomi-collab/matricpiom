@@ -188,50 +188,50 @@ st.markdown(
 # =========================
 if st.session_state.step == "Masalah":
     st.header("Identifikasi Masalah")
-        st.subheader("Problem Structuring")
+    st.subheader("Problem Structuring")
 
-        st.text_area(
-            "Gejala Utama",
-            key="problem_symptom",
-            on_change=autosave
-        )
+    st.text_area(
+        "Gejala Utama",
+        key="problem_symptom",
+        on_change=autosave
+    )
 
-        st.text_area(
-            "Dampak Sistemik",
-            key="systemic_impact",
-            on_change=autosave
-        )
+    st.text_area(
+        "Dampak Sistemik",
+        key="systemic_impact",
+        on_change=autosave
+    )
 
-        st.selectbox(
-            "Arena Masalah",
-            [
-                "Publik",
-                "Pasar",
-                "Organisasi",
-                "Politik",
-                "Pendidikan",
-                "Lingkungan"
-            ],
-            key="problem_arena"
-        )
+    st.selectbox(
+        "Arena Masalah",
+        [
+            "Publik",
+            "Pasar",
+            "Organisasi",
+            "Politik",
+            "Pendidikan",
+            "Lingkungan"
+        ],
+        key="problem_arena"
+    )
 
-        st.text_area(
-            "Aktor Terdampak",
-            key="affected_actor",
-            on_change=autosave
-        )
+    st.text_area(
+        "Aktor Terdampak",
+        key="affected_actor",
+        on_change=autosave
+    )
 
-        st.text_area(
-            "Aktor Dominan",
-            key="dominant_actor",
-            on_change=autosave
-        )
+    st.text_area(
+        "Aktor Dominan",
+        key="dominant_actor",
+        on_change=autosave
+    )
 
-        st.text_area(
-            "Konflik Kepentingan",
-            key="conflict_interest",
-            on_change=autosave
-        )
+    st.text_area(
+        "Konflik Kepentingan",
+        key="conflict_interest",
+        on_change=autosave
+    )
     
 
 # =========================
