@@ -232,42 +232,41 @@ if st.session_state.step == "Masalah":
         key="conflict_interest",
         on_change=autosave
     )
-        st.subheader("Principal-Agent Structure")
+    st.subheader("Principal-Agent Structure")
 
-        st.text_input(
-            "Principal",
-            key="principal"
-        )
+    st.text_input(
+        "Principal",
+        key="principal"
+    )
 
-        st.text_input(
-            "Agent",
-            key="agent"
-        )
+    st.text_input(
+        "Agent",
+        key="agent"
+    )
 
-        st.text_area(
-            "Mandat Formal",
-            key="formal_mandate",
-            on_change=autosave
-        )
+    st.text_area(
+        "Mandat Formal",
+        key="formal_mandate",
+        on_change=autosave
+    )
 
-        st.text_area(
-            "Potensi Penyimpangan",
-            key="deviation_risk",
-            on_change=autosave
-        )
+    st.text_area(
+        "Potensi Penyimpangan",
+        key="deviation_risk",
+        on_change=autosave
+    )
 
-        st.slider(
-            "Asimetri Informasi",
-            0, 10, 5,
-            key="info_asymmetry"
-        )
+    st.slider(
+        "Asimetri Informasi",
+        0, 10, 5,
+        key="info_asymmetry"
+    )
 
-        st.slider(
-            "Kekuatan Monitoring",
-            0, 10, 5,
-            key="monitoring_strength"
-        )
-
+    st.slider(
+        "Kekuatan Monitoring",
+        0, 10, 5,
+        key="monitoring_strength"
+    )
 # =========================
 # POWER
 # =========================
