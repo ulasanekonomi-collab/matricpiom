@@ -277,7 +277,7 @@ elif info_score <= 8:
 else:
     st.caption("Informasi sangat tertutup")
 
-    monitor_score = st.slider(
+monitor_score = st.slider(
     "Kekuatan Monitoring",
     0, 10, 5,
     key="monitoring_strength"
