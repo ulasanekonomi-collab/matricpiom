@@ -297,6 +297,7 @@ elif monitor_score <= 8:
 
 else:
     st.caption("Monitoring sangat ketat")
+
 # =========================
 # POWER
 # =========================
