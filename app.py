@@ -827,6 +827,64 @@ if st.session_state.step == "Masalah":
             "Institution mengalami "
             "stagnant governance trajectory."
         )
+    st.subheader("Institutional Trajectory Map")
+
+    import plotly.graph_objects as go
+
+    fig = go.Figure()
+
+    # QUADRANT LINES
+    fig.add_shape(
+        type="line",
+        x0=5, y0=0, x1=5, y1=10,
+        line=dict(dash="dash")
+    )
+
+    fig.add_shape(
+        type="line",
+        x0=0, y0=5, x1=10, y1=5,
+        line=dict(dash="dash")
+    )
+
+    # INSTITUTION POSITION
+    fig.add_trace(go.Scatter(
+        x=[PSI],
+        y=[simulated_RCI],
+        mode="markers+text",
+        text=["Institution"],
+        textposition="top center",
+        marker=dict(
+            size=22,
+            color="red"
+        )
+    ))
+
+    # QUADRANT LABELS
+    fig.add_annotation(x=2.5, y=8.5,
+                       text="Institutional Trap",
+                       showarrow=False)
+
+    fig.add_annotation(x=7.5, y=8.5,
+                       text="Reform Momentum",
+                       showarrow=False)
+
+    fig.add_annotation(x=7.5, y=2,
+                       text="Adaptive Stability",
+                       showarrow=False)
+
+    fig.add_annotation(x=2.5, y=2,
+                       text="Governance Stagnation",
+                       showarrow=False)
+
+    fig.update_layout(
+        xaxis_title="Problem Severity Index (PSI)",
+        yaxis_title="Reform Capacity Index (RCI)",
+        xaxis=dict(range=[0,10]),
+        yaxis=dict(range=[0,10]),
+        height=600
+    )
+
+st.plotly_chart(fig, use_container_width=True)
 
     else:
 
@@ -860,6 +918,8 @@ if st.session_state.step == "Masalah":
             "Tidak ada perubahan signifikan "
             "dalam struktur kelembagaan."
         )
+
+    
     st.subheader("Institutional Failure Profile")
 
     failure_df = pd.DataFrame({
