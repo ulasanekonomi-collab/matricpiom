@@ -886,16 +886,7 @@ if st.session_state.step == "Masalah":
 
 st.plotly_chart(fig, use_container_width=True)
 
-    else:
 
-        st.error(
-            "Institution menunjukkan "
-            "high-risk deterioration trajectory."
-        )        
-        st.warning(
-            "Kelembagaan tampak stabil "
-            "namun kapasitas reformasi masih lemah."
-        )    
     # Interpretation
 
     if simulated_PSI < PSI:
