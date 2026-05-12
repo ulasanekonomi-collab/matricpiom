@@ -335,7 +335,31 @@ if st.session_state.step == "Masalah":
         key="enforcement_gap",
         on_change=autosave
     )
-    
+    st.subheader("Coalition & Resistance Mapping")
+
+    st.text_area(
+        "Reform Supporters",
+        key="reform_supporters",
+        on_change=autosave
+    )
+
+    st.text_area(
+        "Reform Resistors",
+        key="reform_resistors",
+        on_change=autosave
+    )
+
+    st.text_area(
+        "Veto Actors",
+        key="veto_actors",
+        on_change=autosave
+    )
+
+    st.text_area(
+        "Potential Coalitions",
+        key="potential_coalitions",
+        on_change=autosave
+    )    
     st.subheader("Problem Severity Index")
 
     monitoring_weakness = 10 - monitor_score
