@@ -359,7 +359,71 @@ if st.session_state.step == "Masalah":
         "Potential Coalitions",
         key="potential_coalitions",
         on_change=autosave
-    )    
+    )   
+    st.subheader("Reform Feasibility")
+
+    coalition_score = score_level(
+        st.session_state.potential_coalitions
+    )
+
+    resistance_score = score_level(
+        st.session_state.reform_resistors
+    )
+
+    veto_score = score_level(
+        st.session_state.veto_actors
+    )
+
+    reform_feasibility = (
+        monitor_score +
+        coalition_score -
+        resistance_score -
+        veto_score
+    )
+
+    reform_feasibility = max(
+        0,
+        min(10, reform_feasibility)
+    )
+
+    st.metric(
+        "Reform Feasibility Score",
+        reform_feasibility
+    )
+
+    if reform_feasibility <= 2:
+
+        st.error("""
+        Reformasi sangat sulit dilakukan.
+        
+        Resistance dan veto structure
+        sangat dominan.
+        """)
+
+    elif reform_feasibility <= 5:
+
+        st.warning("""
+        Reformasi menghadapi hambatan signifikan.
+        
+        Diperlukan penguatan coalition support.
+        """)
+
+    elif reform_feasibility <= 8:
+
+        st.info("""
+        Reformasi cukup feasible.
+        
+        Terdapat peluang coalition building.
+        """)
+
+    else:
+
+        st.success("""
+        Reformasi memiliki feasibility tinggi.
+        
+        Struktur coalition relatif mendukung perubahan.
+        """)
+    
     st.subheader("Problem Severity Index")
 
     monitoring_weakness = 10 - monitor_score
