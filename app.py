@@ -767,7 +767,39 @@ if st.session_state.step == "Masalah":
         st.warning(
             "Kapasitas reformasi rendah."
         )
-    
+    st.subheader("Institutional Signal")
+
+    # SIGNAL MATRIX
+
+    if PSI >= 6 and simulated_RCI >= 6:
+
+        st.success(
+            "Tekanan kelembagaan tinggi, "
+            "namun kapasitas reformasi juga kuat. "
+            "Momentum reformasi terbuka."
+        )
+
+    elif PSI >= 6 and simulated_RCI < 6:
+
+        st.error(
+            "Masalah kelembagaan berat "
+            "tetapi kapasitas reformasi rendah. "
+            "Risiko institutional trap meningkat."
+        )
+
+    elif PSI < 6 and simulated_RCI >= 6:
+
+        st.info(
+            "Kondisi kelembagaan relatif stabil "
+            "dengan kapasitas adaptasi yang baik."
+        )
+
+    else:
+
+        st.warning(
+            "Kelembagaan tampak stabil "
+            "namun kapasitas reformasi masih lemah."
+        )    
     # Interpretation
 
     if simulated_PSI < PSI:
