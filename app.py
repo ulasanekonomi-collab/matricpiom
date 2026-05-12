@@ -861,7 +861,7 @@ if st.session_state.step == "Masalah":
         x=[PSI],
         y=[RCI],
         mode="markers+text",
-        text=["Institution"],
+        text=["Current Institution"],
         textposition="top center",
         marker=dict(
             size=22,
@@ -876,6 +876,18 @@ if st.session_state.step == "Masalah":
         marker=dict(size=10, color='blue'),
         name='Reform Trajectory'
     ))
+    fig.add_trace(go.Scatter(
+        x=[simulated_PSI],
+        y=[simulated_RCI],
+        mode="markers+text",
+        text=["Simulated Institution"],
+        textposition="top center",
+        marker=dict(
+            size=18,
+            color="green"
+        ),
+    name="Simulated Institution"
+))
     fig.add_annotation(
         x=simulated_PSI,
         y=simulated_RCI,
