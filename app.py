@@ -4,6 +4,9 @@ import plotly.express as px
 import json
 import os
 
+from docx import Document
+from io import BytesIO
+
 SAVE_FILE = "piom_autosave.json"
 
 FIELDS = [
@@ -47,7 +50,38 @@ def autoload():
                 if k in data:
                     st.session_state[k] = data[k]
     except Exception as e:
-        st.write("Error autoload:", e)        
+        st.write("Error autoload:", e)       
+
+    def generate_report():
+
+        doc = Document()
+
+        doc.add_heading("PIOM Institutional Diagnostic Report", level=1)
+
+        doc.add_heading("Problem Structuring", level=2)
+        doc.add_paragraph(f"Gejala Utama: {st.session_state.get('masalah', '')}")
+        doc.add_paragraph(f"Aktor Dominan: {st.session_state.get('aktor_dominan', '')}")
+
+        doc.add_heading("Power Analysis", level=2)
+        doc.add_paragraph(f"Power Supporters: {supporter_power}")
+        doc.add_paragraph(f"Power Resistors: {resistor_power}")
+        doc.add_paragraph(f"Power Veto Actors: {veto_power}")
+
+        doc.add_heading("Institutional Assessment", level=2)
+        doc.add_paragraph(f"Problem Severity Index (PSI): {round(PSI,2)}")
+        doc.add_paragraph(f"Reform Capacity Index (RCI): {round(RCI,2)}")
+
+        doc.add_heading("Strategic Interpretation", level=2)
+        doc.add_paragraph(
+            "Institutional assessment indicates the current governance condition "
+            "requires adaptive and gradual reform strategy."
+        )
+
+    file_stream = BytesIO()
+    doc.save(file_stream)
+    file_stream.seek(0)
+
+    return file_stream
 # =========================
 # HELPER FUNCTIONS
 # =========================
@@ -1337,3 +1371,12 @@ elif st.session_state.step == "Output":
 
     st.subheader("Rantai Kausal")
     st.write(causal)
+
+    report_file = generate_report()
+
+    st.download_button(
+        label="📥 Download PIOM Report",
+        data=report_file,
+        file_name="PIOM_Report.docx",
+        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
