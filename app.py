@@ -256,47 +256,47 @@ if st.session_state.step == "Masalah":
         on_change=autosave
     )
 
-info_score = st.slider(
-    "Asimetri Informasi",
-    0, 10, 5,
-    key="info_asymmetry"
-)
+    info_score = st.slider(
+        "Asimetri Informasi",
+        0, 10, 5,
+        key="info_asymmetry"
+    )
 
-if info_score <= 2:
-    st.caption("Informasi relatif terbuka")
+    if info_score <= 2:
+        st.caption("Informasi relatif terbuka")
 
-elif info_score <= 4:
-    st.caption("Ada ketimpangan informasi ringan")
+    elif info_score <= 4:
+        st.caption("Ada ketimpangan informasi ringan")
 
-elif info_score <= 6:
-    st.caption("Monitoring mulai sulit")
+    elif info_score <= 6:
+        st.caption("Monitoring mulai sulit")
 
-elif info_score <= 8:
-    st.caption("Agent dominan dalam penguasaan informasi")
+    elif info_score <= 8:
+        st.caption("Agent dominan dalam penguasaan informasi")
 
-else:
-    st.caption("Informasi sangat tertutup")
+    else:
+        st.caption("Informasi sangat tertutup")
 
-monitor_score = st.slider(
-    "Kekuatan Monitoring",
-    0, 10, 5,
-    key="monitoring_strength"
-)
+    monitor_score = st.slider(
+        "Kekuatan Monitoring",
+        0, 10, 5,
+        key="monitoring_strength"
+    )
 
-if monitor_score <= 2:
-    st.caption("Pengawasan hampir tidak ada")
+    if monitor_score <= 2:
+        st.caption("Pengawasan hampir tidak ada")
 
-elif monitor_score <= 4:
-    st.caption("Pengawasan lemah")
+    elif monitor_score <= 4:
+        st.caption("Pengawasan lemah")
 
-elif monitor_score <= 6:
-    st.caption("Monitoring moderat")
+    elif monitor_score <= 6:
+        st.caption("Monitoring moderat")
 
-elif monitor_score <= 8:
-    st.caption("Monitoring kuat")
+    elif monitor_score <= 8:
+        st.caption("Monitoring kuat")
 
-else:
-    st.caption("Monitoring sangat ketat")
+    else:
+        st.caption("Monitoring sangat ketat")
 
 # =========================
 # POWER
