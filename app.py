@@ -876,7 +876,21 @@ if st.session_state.step == "Masalah":
         marker=dict(size=10, color='blue'),
         name='Reform Trajectory'
     ))
-    
+    fig.add_annotation(
+        x=simulated_PSI,
+        y=simulated_RCI,
+        ax=PSI,
+        ay=RCI,
+        xref='x',
+        yref='y',
+        axref='x',
+        ayref='y',
+        showarrow=True,
+        arrowhead=3,
+        arrowsize=1.5,
+        arrowwidth=3,
+        arrowcolor='blue'
+    )
     # QUADRANT LABELS
     fig.add_annotation(x=2.5, y=8.5,
                        text="Institutional Trap",
