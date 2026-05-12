@@ -496,6 +496,35 @@ if st.session_state.step == "Masalah":
         fig,
         use_container_width=True
     )    
+
+    
+    st.subheader("Problem Severity Index")
+
+    monitoring_weakness = 10 - monitor_score
+
+    deviation_score = score_level(
+        st.session_state.deviation_risk
+    )
+    psi = (
+        monitoring_weakness +
+        deviation_score
+    ) / 2
+    
+    conflict_score = score_level(
+        st.session_state.conflict_interest
+    )
+
+    PSI = (
+        info_score +
+        monitoring_weakness +
+        deviation_score +
+        conflict_score
+    ) / 4
+
+    st.metric(
+        "PSI Score",
+        round(PSI, 2)
+    )
     st.subheader("Strategic Interpretation")
 
     interpretation = ""
@@ -565,7 +594,7 @@ if st.session_state.step == "Masalah":
 
     # PSI Severity
 
-    if psi >= 7:
+    if PSI >= 7:
 
         interpretation += """
         Tingkat keparahan masalah kelembagaan
@@ -573,7 +602,7 @@ if st.session_state.step == "Masalah":
 
         """
 
-    elif psi >= 4:
+    elif PSI >= 4:
 
         interpretation += """
         Terdapat tekanan kelembagaan moderat
@@ -590,34 +619,6 @@ if st.session_state.step == "Masalah":
         """
 
     st.info(interpretation)
-    
-    st.subheader("Problem Severity Index")
-
-    monitoring_weakness = 10 - monitor_score
-
-    deviation_score = score_level(
-        st.session_state.deviation_risk
-    )
-    psi = (
-        monitoring_weakness +
-        deviation_score
-    ) / 2
-    conflict_score = score_level(
-        st.session_state.conflict_interest
-    )
-
-    PSI = (
-        info_score +
-        monitoring_weakness +
-        deviation_score +
-        conflict_score
-    ) / 4
-
-    st.metric(
-        "PSI Score",
-        round(PSI, 2)
-    )
-
     if PSI <= 2:
         st.success("Low Governance Problem")
 
