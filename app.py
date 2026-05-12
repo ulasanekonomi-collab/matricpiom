@@ -997,7 +997,7 @@ else:
             - dan sistem pelaporan internal.
             """
 
-        else:
+
 
             interpretation = """
             Pengawasan komunitas
