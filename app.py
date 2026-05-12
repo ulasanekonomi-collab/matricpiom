@@ -598,7 +598,10 @@ if st.session_state.step == "Masalah":
     deviation_score = score_level(
         st.session_state.deviation_risk
     )
-
+    psi = (
+        monitoring_weakness +
+        deviation_score
+    ) / 2
     conflict_score = score_level(
         st.session_state.conflict_interest
     )
