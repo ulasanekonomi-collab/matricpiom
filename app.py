@@ -830,7 +830,17 @@ if st.session_state.step == "Masalah":
     st.subheader("Institutional Trajectory Map")
 
     import plotly.graph_objects as go
+    RCI = (
+        monitor_score +
+        info_score +
+        supporter_power
+    ) / 3
 
+    simulated_RCI = (
+        sim_monitor +
+        sim_info +
+        sim_support
+    ) / 3
     fig = go.Figure()
 
     # QUADRANT LINES
@@ -849,7 +859,7 @@ if st.session_state.step == "Masalah":
     # INSTITUTION POSITION
     fig.add_trace(go.Scatter(
         x=[PSI],
-        y=[simulated_RCI],
+        y=[RCI],
         mode="markers+text",
         text=["Institution"],
         textposition="top center",
@@ -858,7 +868,15 @@ if st.session_state.step == "Masalah":
             color="red"
         )
     ))
-
+    fig.add_trace(go.Scatter(
+        x=[PSI, simulated_PSI],
+        y=[RCI, simulated_RCI],
+        mode='lines+markers',
+        line=dict(color='blue', width=3),
+        marker=dict(size=10, color='blue'),
+        name='Reform Trajectory'
+    ))
+    
     # QUADRANT LABELS
     fig.add_annotation(x=2.5, y=8.5,
                        text="Institutional Trap",
