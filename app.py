@@ -1025,7 +1025,7 @@ else:
         dan negosiasi kelembagaan.
         """
 
-    else:
+   
         interpretation = """
         Risiko governance failure cukup tinggi.
         
