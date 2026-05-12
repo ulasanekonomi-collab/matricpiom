@@ -796,6 +796,44 @@ if st.session_state.step == "Masalah":
 
     else:
 
+    st.subheader("Institutional Trajectory")
+
+    trajectory_score = simulated_RCI - PSI
+
+    st.metric(
+        "Trajectory Score",
+        round(trajectory_score, 2)
+    )
+
+    # TRAJECTORY INTERPRETATION
+
+    if trajectory_score >= 4:
+
+        st.success(
+            "Institution menunjukkan "
+            "adaptive reform trajectory."
+        )
+
+    elif trajectory_score >= 1:
+
+        st.info(
+            "Institution berada dalam "
+            "gradual reform trajectory."
+        )
+
+    elif trajectory_score >= -2:
+
+        st.warning(
+            "Institution mengalami "
+            "stagnant governance trajectory."
+        )
+
+    else:
+
+        st.error(
+            "Institution menunjukkan "
+            "high-risk deterioration trajectory."
+        )        
         st.warning(
             "Kelembagaan tampak stabil "
             "namun kapasitas reformasi masih lemah."
