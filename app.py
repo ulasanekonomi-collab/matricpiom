@@ -496,6 +496,101 @@ if st.session_state.step == "Masalah":
         fig,
         use_container_width=True
     )    
+    st.subheader("Strategic Interpretation")
+
+    interpretation = ""
+
+    # Reform Coalition
+
+    if supporter_power > resistor_power:
+
+        interpretation += """
+        Reform coalition relatif lebih kuat
+        dibanding kelompok resistensi.
+
+        """
+
+    else:
+
+        interpretation += """
+        Kelompok resistensi masih memiliki
+        kekuatan yang signifikan.
+
+        """
+
+    # Veto Dynamics
+
+    if veto_power >= 7:
+
+        interpretation += """
+        Veto actors memiliki kapasitas tinggi
+        untuk menghambat reformasi.
+
+        """
+
+    elif veto_power >= 4:
+
+        interpretation += """
+        Veto actors memiliki pengaruh moderat
+        terhadap arah reformasi.
+
+        """
+
+    else:
+
+        interpretation += """
+        Kapasitas veto actors relatif terbatas.
+
+        """
+
+    # Monitoring
+
+    if monitor_score <= 4:
+
+        interpretation += """
+        Kelemahan monitoring menjadi sumber
+        utama institutional vulnerability.
+
+        """
+
+    # Information Asymmetry
+
+    if info_score >= 7:
+
+        interpretation += """
+        Asimetri informasi tinggi
+        meningkatkan risiko opportunistic behavior.
+
+        """
+
+    # PSI Severity
+
+    if psi_score >= 7:
+
+        interpretation += """
+        Tingkat keparahan masalah kelembagaan
+        tergolong tinggi.
+
+        """
+
+    elif psi_score >= 4:
+
+        interpretation += """
+        Terdapat tekanan kelembagaan moderat
+        yang memerlukan reformasi bertahap.
+
+        """
+
+    else:
+
+        interpretation += """
+        Struktur kelembagaan relatif stabil,
+        namun tetap membutuhkan penguatan adaptif.
+
+        """
+
+    st.info(interpretation)
+    
     st.subheader("Problem Severity Index")
 
     monitoring_weakness = 10 - monitor_score
