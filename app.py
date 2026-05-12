@@ -333,6 +333,25 @@ if st.session_state.step == "Masalah":
 
     else:
         st.error("Severe Institutional Failure")
+
+    st.subheader("Institutional Failure Profile")
+
+    failure_df = pd.DataFrame({
+        "Dimension": [
+            "Information Failure",
+            "Monitoring Failure",
+            "Conflict Intensity",
+            "Governance Risk"
+        ],
+        "Score": [
+            info_score,
+            monitoring_weakness,
+            conflict_score,
+            deviation_score
+        ]
+    })
+
+    st.table(failure_df)
 # =========================
 # POWER
 # =========================
