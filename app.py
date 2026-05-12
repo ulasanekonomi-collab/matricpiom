@@ -406,15 +406,55 @@ if st.session_state.step == "Masalah":
         """
 
     elif dominant_failure == "Monitoring Failure":
-        interpretation = """
-        Masalah utama berada pada lemahnya monitoring.
-        
-        Mekanisme pengawasan belum cukup kuat
-        untuk mengendalikan opportunistic behavior.
-        
-        Reformasi perlu fokus pada
-        accountability dan oversight.
-        """
+
+        if domain == "Public Governance":
+
+            interpretation = """
+            Mekanisme pengawasan birokrasi
+            masih belum cukup kuat.
+
+            Kontrol terhadap pelaksana kebijakan
+            masih lemah sehingga
+            potensi penyimpangan meningkat.
+
+            Reformasi perlu fokus pada:
+            - penguatan pengawasan,
+            - transparansi,
+            - dan evaluasi kinerja institusi.
+            """
+
+        elif domain == "Business Organization":
+
+            interpretation = """
+            Sistem monitoring organisasi bisnis
+            masih belum optimal.
+
+            Owner belum memiliki visibilitas
+            yang cukup terhadap
+            perilaku dan performa manager.
+
+            Organisasi perlu memperkuat:
+            - KPI,
+            - evaluasi kinerja,
+            - dan sistem pelaporan internal.
+            """
+
+        else:
+
+            interpretation = """
+            Pengawasan komunitas
+            dan keselarasan misi organisasi
+            masih belum cukup kuat.
+
+            Potensi ketidaksesuaian
+            antara tujuan organisasi
+            dan pelaksana lapangan meningkat.
+
+            Diperlukan:
+            - monitoring partisipatif,
+            - transparansi aktivitas,
+            - dan penguatan akuntabilitas sosial.
+            """
 
     elif dominant_failure == "Conflict Intensity":
         interpretation = """
