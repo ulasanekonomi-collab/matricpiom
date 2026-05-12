@@ -736,6 +736,38 @@ if st.session_state.step == "Masalah":
         round(simulated_PSI, 2)
     )
 
+    # Reform Capacity Index (RCI)
+
+    simulated_RCI = (
+        sim_support +
+        sim_monitor -
+        veto_power -
+        resistor_power
+    ) / 2
+
+    st.metric(
+        "Reform Capacity Index",
+        round(simulated_RCI, 2)
+    )
+    if simulated_RCI >= 6:
+
+        st.success(
+            "Kapasitas reformasi tergolong kuat."
+        )
+
+    elif simulated_RCI >= 3:
+
+        st.info(
+            "Reformasi masih feasible "
+            "dengan coalition management."
+        )
+
+    else:
+
+        st.warning(
+            "Kapasitas reformasi rendah."
+        )
+    
     # Interpretation
 
     if simulated_PSI < PSI:
