@@ -889,26 +889,26 @@ st.plotly_chart(fig, use_container_width=True)
 
     # Interpretation
 
-    if simulated_PSI < PSI:
+if simulated_PSI < PSI:
 
-        st.success(
-            "Simulasi reformasi menunjukkan "
-            "penurunan risiko kelembagaan."
-        )
+    st.success(
+        "Simulasi reformasi menunjukkan "
+        "penurunan risiko kelembagaan."
+    )
 
-    elif simulated_PSI > PSI:
+elif simulated_PSI > PSI:
 
-        st.error(
-            "Simulasi menunjukkan kondisi "
-            "kelembagaan memburuk."
-        )
+    st.error(
+        "Simulasi menunjukkan kondisi "
+        "kelembagaan memburuk."
+    )
 
-    else:
+else:
 
-        st.info(
-            "Tidak ada perubahan signifikan "
-            "dalam struktur kelembagaan."
-        )
+    st.info(
+        "Tidak ada perubahan signifikan "
+        "dalam struktur kelembagaan."
+    )
 
     
     st.subheader("Institutional Failure Profile")
