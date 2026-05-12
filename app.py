@@ -352,6 +352,20 @@ if st.session_state.step == "Masalah":
     })
 
     st.table(failure_df)
+
+    st.subheader("Institutional Failure Radar")
+
+    fig = px.line_polar(
+        failure_df,
+        r="Score",
+        theta="Dimension",
+        line_close=True
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
 # =========================
 # POWER
 # =========================
