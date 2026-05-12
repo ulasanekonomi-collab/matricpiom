@@ -444,7 +444,58 @@ if st.session_state.step == "Masalah":
         
         Struktur coalition relatif mendukung perubahan.
         """)
-    
+    st.subheader("Power–Position Matrix")
+
+    power_df = pd.DataFrame({
+        "Actor": [
+            "Reform Supporters",
+            "Reform Resistors",
+            "Veto Actors"
+        ],
+
+        "Position": [
+            1,
+            -1,
+            0
+        ],
+
+        "Power": [
+            supporter_power,
+            resistor_power,
+            veto_power
+        ]
+    })
+
+    fig = px.scatter(
+        power_df,
+        x="Position",
+        y="Power",
+        text="Actor",
+        size="Power"
+    )
+
+    fig.update_traces(
+        textposition="top center"
+    )
+
+    fig.update_layout(
+        xaxis=dict(
+            tickvals=[-1, 0, 1],
+            ticktext=[
+                "Resist",
+                "Neutral/Veto",
+                "Support"
+            ]
+        ),
+
+        yaxis_title="Power",
+        xaxis_title="Political Position"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )    
     st.subheader("Problem Severity Index")
 
     monitoring_weakness = 10 - monitor_score
