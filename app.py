@@ -697,6 +697,67 @@ if st.session_state.step == "Masalah":
     for rec in recommendations:
 
         st.write(rec)
+    st.subheader("Reform Simulation")
+
+    st.write(
+        "Simulasikan dampak reformasi terhadap kondisi kelembagaan."
+    )
+
+    sim_monitor = st.slider(
+        "Simulated Monitoring Strength",
+        0, 10, monitor_score
+    )
+
+    sim_info = st.slider(
+        "Simulated Information Transparency",
+        0, 10, 10 - info_score
+    )
+
+    sim_support = st.slider(
+        "Simulated Reform Coalition",
+        0, 10, supporter_power
+    )
+
+    # Recalculate PSI
+
+    sim_monitoring_weakness = 10 - sim_monitor
+
+    sim_info_problem = 10 - sim_info
+
+    simulated_PSI = (
+        sim_monitoring_weakness +
+        sim_info_problem +
+        conflict_score +
+        deviation_score
+    ) / 4
+
+    st.metric(
+        "Simulated PSI",
+        round(simulated_PSI, 2)
+    )
+
+    # Interpretation
+
+    if simulated_PSI < PSI:
+
+        st.success(
+            "Simulasi reformasi menunjukkan "
+            "penurunan risiko kelembagaan."
+        )
+
+    elif simulated_PSI > PSI:
+
+        st.error(
+            "Simulasi menunjukkan kondisi "
+            "kelembagaan memburuk."
+        )
+
+    else:
+
+        st.info(
+            "Tidak ada perubahan signifikan "
+            "dalam struktur kelembagaan."
+        )
     st.subheader("Institutional Failure Profile")
 
     failure_df = pd.DataFrame({
