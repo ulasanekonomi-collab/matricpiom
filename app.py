@@ -1040,7 +1040,7 @@ else:
 # =========================
 # POWER
 # =========================
-elif st.session_state.step == "Power":
+if st.session_state.step == "Power":
     st.header("Power")
 
     st.text_area("Aktor", key="power_aktor", on_change=autosave)
