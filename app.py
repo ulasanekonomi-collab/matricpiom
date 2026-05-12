@@ -126,6 +126,25 @@ Institusi: {st.session_state.institution_formal}
 # PAGE CONFIG
 # =========================
 st.set_page_config(page_title="PIOM Analyzer", layout="wide")
+domain = st.selectbox(
+    "Institutional Ecology",
+    [
+        "Public Governance",
+        "Business Organization",
+        "Social Institution"
+    ]
+)
+if domain == "Public Governance":
+    principal_term = "Rakyat"
+    agent_term = "Birokrasi"
+
+elif domain == "Business Organization":
+    principal_term = "Owner"
+    agent_term = "Manager"
+
+else:
+    principal_term = "Community/Donor"
+    agent_term = "Organizer"
 
 # =========================
 # SESSION STATE
@@ -235,12 +254,12 @@ if st.session_state.step == "Masalah":
     st.subheader("Principal-Agent Structure")
 
     st.text_input(
-        "Principal",
+        "principal_term",
         key="principal"
     )
 
     st.text_input(
-        "Agent",
+        "agent_term",
         key="agent"
     )
 
