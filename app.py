@@ -316,6 +316,25 @@ if st.session_state.step == "Masalah":
 
     else:
         st.caption("Monitoring sangat ketat")
+    st.subheader("Institutional Gap Analysis")
+
+    st.text_area(
+        "Formal Rules / Official Procedures",
+        key="formal_rules",
+        on_change=autosave
+    )
+
+    st.text_area(
+        "Actual Practices",
+        key="actual_practices",
+        on_change=autosave
+    )
+
+    st.text_area(
+        "Enforcement Gap",
+        key="enforcement_gap",
+        on_change=autosave
+    )
     
     st.subheader("Problem Severity Index")
 
