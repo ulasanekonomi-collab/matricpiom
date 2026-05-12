@@ -366,6 +366,60 @@ if st.session_state.step == "Masalah":
         fig,
         use_container_width=True
     )
+
+    st.subheader("PIOM Interpretation")
+
+    dominant_failure = failure_df.loc[
+        failure_df["Score"].idxmax(),
+        "Dimension"
+    ]
+
+    if dominant_failure == "Information Failure":
+        interpretation = """
+        Masalah didominasi oleh information failure.
+        
+        Struktur governance menunjukkan
+        tingginya asimetri informasi
+        antara principal dan agent.
+        
+        Transparansi dan akses informasi
+        perlu diperkuat.
+        """
+
+    elif dominant_failure == "Monitoring Failure":
+        interpretation = """
+        Masalah utama berada pada lemahnya monitoring.
+        
+        Mekanisme pengawasan belum cukup kuat
+        untuk mengendalikan opportunistic behavior.
+        
+        Reformasi perlu fokus pada
+        accountability dan oversight.
+        """
+
+    elif dominant_failure == "Conflict Intensity":
+        interpretation = """
+        Konflik kepentingan menjadi faktor dominan.
+        
+        Aktor memiliki kepentingan berbeda
+        yang berpotensi menghambat reformasi.
+        
+        Diperlukan strategi koalisi
+        dan negosiasi kelembagaan.
+        """
+
+    else:
+        interpretation = """
+        Risiko governance failure cukup tinggi.
+        
+        Potensi penyimpangan perilaku agent
+        perlu diantisipasi melalui:
+        - monitoring,
+        - transparansi,
+        - dan redesign insentif.
+        """
+
+    st.info(interpretation)
 # =========================
 # POWER
 # =========================
