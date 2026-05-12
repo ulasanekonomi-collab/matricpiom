@@ -297,7 +297,42 @@ if st.session_state.step == "Masalah":
 
     else:
         st.caption("Monitoring sangat ketat")
+    
+    st.subheader("Problem Severity Index")
 
+    monitoring_weakness = 10 - monitor_score
+
+    deviation_score = score_level(
+        st.session_state.deviation_risk
+    )
+
+    conflict_score = score_level(
+        st.session_state.conflict_interest
+    )
+
+    PSI = (
+        info_score +
+        monitoring_weakness +
+        deviation_score +
+        conflict_score
+    ) / 4
+
+    st.metric(
+        "PSI Score",
+        round(PSI, 2)
+    )
+
+    if PSI <= 2:
+        st.success("Low Governance Problem")
+
+    elif PSI <= 5:
+        st.warning("Moderate Governance Problem")
+
+    elif PSI <= 8:
+        st.error("High Structural Governance Problem")
+
+    else:
+        st.error("Severe Institutional Failure")
 # =========================
 # POWER
 # =========================
