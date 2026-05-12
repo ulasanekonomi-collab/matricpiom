@@ -630,7 +630,73 @@ if st.session_state.step == "Masalah":
 
     else:
         st.error("Severe Institutional Failure")
+    st.subheader("Reform Recommendations")
 
+    recommendations = []
+
+    # Monitoring Reform
+
+    if monitor_score <= 4:
+
+        recommendations.append(
+            "- Perkuat monitoring dan evaluasi institusi."
+        )
+
+    # Information Transparency
+
+    if info_score >= 7:
+
+        recommendations.append(
+            "- Tingkatkan transparansi dan akses informasi."
+        )
+
+    # Coalition Strategy
+
+    if supporter_power < resistor_power:
+
+        recommendations.append(
+            "- Bangun coalition support sebelum reformasi besar dilakukan."
+        )
+
+    # Veto Management
+
+    if veto_power >= 7:
+
+        recommendations.append(
+            "- Lakukan negotiated alignment dengan veto actors."
+        )
+
+    # Institutional Gap
+
+    if len(st.session_state.enforcement_gap) > 20:
+
+        recommendations.append(
+            "- Kurangi implementation gap antara aturan formal dan praktik aktual."
+        )
+
+    # PSI Severity
+
+    if PSI >= 7:
+
+        recommendations.append(
+            "- Prioritaskan reformasi struktural kelembagaan."
+        )
+
+    elif PSI >= 4:
+
+        recommendations.append(
+            "- Lakukan reformasi bertahap dan adaptif."
+        )
+
+    else:
+
+        recommendations.append(
+            "- Fokus pada penguatan kelembagaan preventif."
+        )
+
+    for rec in recommendations:
+
+        st.write(rec)
     st.subheader("Institutional Failure Profile")
 
     failure_df = pd.DataFrame({
