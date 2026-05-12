@@ -360,6 +360,27 @@ if st.session_state.step == "Masalah":
         key="potential_coalitions",
         on_change=autosave
     )   
+
+    st.subheader("Stakeholder Power Matrix")
+
+    supporter_power = st.slider(
+        "Power of Reform Supporters",
+        0, 10, 5,
+        key="supporter_power"
+    )
+
+    resistor_power = st.slider(
+        "Power of Reform Resistors",
+        0, 10, 5,
+        key="resistor_power"
+    )
+
+    veto_power = st.slider(
+        "Power of Veto Actors",
+        0, 10, 5,
+        key="veto_power"
+    )
+    
     st.subheader("Reform Feasibility")
 
     coalition_score = score_level(
@@ -376,9 +397,9 @@ if st.session_state.step == "Masalah":
 
     reform_feasibility = (
         monitor_score +
-        coalition_score -
-        resistance_score -
-        veto_score
+        supporter_power -
+        resistor_power -
+        veto_power
     )
 
     reform_feasibility = max(
