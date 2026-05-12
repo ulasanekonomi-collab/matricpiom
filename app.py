@@ -565,7 +565,7 @@ if st.session_state.step == "Masalah":
 
     # PSI Severity
 
-    if psi_score >= 7:
+    if psi >= 7:
 
         interpretation += """
         Tingkat keparahan masalah kelembagaan
@@ -573,7 +573,7 @@ if st.session_state.step == "Masalah":
 
         """
 
-    elif psi_score >= 4:
+    elif psi >= 4:
 
         interpretation += """
         Terdapat tekanan kelembagaan moderat
