@@ -1219,7 +1219,7 @@ elif st.session_state.step == "Simulation":
     # EXISTING CONDITION
     # =========================
 
-    st.subheader("Existing Condition")
+ #   st.subheader("Existing Condition")
 
     B1 = st.slider("Existing Benefit / Incentive", 0, 10, 2)
     C1 = st.slider("Existing Transaction Cost", 0, 10, 8)
