@@ -1042,21 +1042,21 @@ if st.session_state.step == "Masalah":
 
     elif dominant_failure == "Monitoring Failure":
 
-    if domain == "Public Governance":
+        if domain == "Public Governance":
 
-        interpretation = """
-        Mekanisme pengawasan birokrasi
-        masih belum cukup kuat.
+            interpretation = """
+            Mekanisme pengawasan birokrasi
+            masih belum cukup kuat.
 
-        Kontrol terhadap pelaksana kebijakan
-        masih lemah sehingga
-        potensi penyimpangan meningkat.
+            Kontrol terhadap pelaksana kebijakan
+            masih lemah sehingga
+            potensi penyimpangan meningkat.
 
-        Reformasi perlu fokus pada:
-        - penguatan pengawasan,
-        - transparansi,
-        - dan evaluasi kinerja institusi.
-        """
+            Reformasi perlu fokus pada:
+            - penguatan pengawasan,
+            - transparansi,
+            - dan evaluasi kinerja institusi.
+            """
 
     elif domain == "Business Organization":
 
