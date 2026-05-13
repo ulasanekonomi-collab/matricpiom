@@ -1327,12 +1327,12 @@ elif st.session_state.step == "Design":
                 0, 10, 5
         )
         
-            institutional_rigidity = st.slider(
+        institutional_rigidity = st.slider(
                 "Institutional Rigidity",
                 0, 10, 5
         )
         
-            status_quo_dependency = st.slider(
+        status_quo_dependency = st.slider(
                 "Status Quo Dependency",
                 0, 10, 5
         )
