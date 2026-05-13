@@ -961,30 +961,30 @@ if st.session_state.step == "Masalah":
         height=600
     )
 
-st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
 
 
     # Interpretation
 
-if simulated_PSI < PSI:
+    if simulated_PSI < PSI:
 
     st.success(
         "Simulasi reformasi menunjukkan "
         "penurunan risiko kelembagaan."
     )
 
-elif simulated_PSI > PSI:
+    elif simulated_PSI > PSI:
 
-    st.error(
-        "Simulasi menunjukkan kondisi "
-        "kelembagaan memburuk."
+        st.error(
+            "Simulasi menunjukkan kondisi "
+            "kelembagaan memburuk."
     )
 
-else:
+    else:
 
-    st.info(
-        "Tidak ada perubahan signifikan "
-        "dalam struktur kelembagaan."
+        st.info(
+            "Tidak ada perubahan signifikan "
+            "dalam struktur kelembagaan."
     )
 
     
@@ -1074,22 +1074,22 @@ else:
             - dan sistem pelaporan internal.
             """
 
+    else
 
+        interpretation = """
+        Pengawasan komunitas
+        dan keselarasan misi organisasi
+        masih belum cukup kuat.
 
-            interpretation = """
-            Pengawasan komunitas
-            dan keselarasan misi organisasi
-            masih belum cukup kuat.
+        Potensi ketidaksesuaian
+        antara tujuan organisasi
+        dan pelaksana lapangan meningkat.
 
-            Potensi ketidaksesuaian
-            antara tujuan organisasi
-            dan pelaksana lapangan meningkat.
-
-            Diperlukan:
-            - monitoring partisipatif,
-            - transparansi aktivitas,
-            - dan penguatan akuntabilitas sosial.
-            """
+        Diperlukan:
+        - monitoring partisipatif,
+        - transparansi aktivitas,
+        - dan penguatan akuntabilitas sosial.
+        """
 
     elif dominant_failure == "Conflict Intensity":
         interpretation = """
