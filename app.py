@@ -1213,7 +1213,7 @@ elif st.session_state.step == "Simulation":
 
     st.markdown("""
 #    Simulasi perubahan perilaku sebelum dan sesudah institutional design.
-    """)
+#    """)
 
     # =========================
     # EXISTING CONDITION
