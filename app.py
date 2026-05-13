@@ -1114,6 +1114,7 @@ else:
         """
 
     st.info(interpretation)
+"""
 # =========================
 # POWER
 # =========================
@@ -1356,7 +1357,8 @@ elif st.session_state.step == "Design":
             st.warning("Perlu strategi koalisi dan negosiasi")
         
         else:
-            st.error("Potensi resistensi politik tinggi")    
+            st.error("Potensi resistensi politik tinggi")
+"""
 # =========================
 # OUTPUT
 # =========================
