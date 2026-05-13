@@ -1361,6 +1361,7 @@ elif st.session_state.step == "Simulation":
 # OUTPUT
 # =========================
 elif st.session_state.step == "Output":
+
     st.header("Hasil Analisis")
 
     root, causal = analyze_piom()
