@@ -961,7 +961,7 @@ if st.session_state.step == "Masalah":
         height=600
         )
 
-        st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 
     # Interpretation
