@@ -1212,7 +1212,7 @@ elif st.session_state.step == "Simulation":
     st.header("PIOM Institutional Design Simulator")
 
     st.markdown("""
-    Simulasi perubahan perilaku sebelum dan sesudah institutional design.
+#    Simulasi perubahan perilaku sebelum dan sesudah institutional design.
     """)
 
     # =========================
