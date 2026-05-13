@@ -1042,40 +1042,39 @@ if st.session_state.step == "Masalah":
 
     elif dominant_failure == "Monitoring Failure":
 
-        if domain == "Public Governance":
+    if domain == "Public Governance":
 
-            interpretation = """
-            Mekanisme pengawasan birokrasi
-            masih belum cukup kuat.
+        interpretation = """
+        Mekanisme pengawasan birokrasi
+        masih belum cukup kuat.
 
-            Kontrol terhadap pelaksana kebijakan
-            masih lemah sehingga
-            potensi penyimpangan meningkat.
+        Kontrol terhadap pelaksana kebijakan
+        masih lemah sehingga
+        potensi penyimpangan meningkat.
 
-            Reformasi perlu fokus pada:
-            - penguatan pengawasan,
-            - transparansi,
-            - dan evaluasi kinerja institusi.
-            """
+        Reformasi perlu fokus pada:
+        - penguatan pengawasan,
+        - transparansi,
+        - dan evaluasi kinerja institusi.
+        """
 
-        elif domain == "Business Organization":
+    elif domain == "Business Organization":
 
-            interpretation = """
-            Sistem monitoring organisasi bisnis
-            masih belum optimal.
+        interpretation = """
+        Sistem monitoring organisasi bisnis
+        masih belum optimal.
 
-            Owner belum memiliki visibilitas
-            yang cukup terhadap
-            perilaku dan performa manager.
+        Owner belum memiliki visibilitas
+        yang cukup terhadap
+        perilaku dan performa manager.
 
-            Organisasi perlu memperkuat:
-            - KPI,
-            - evaluasi kinerja,
-            - dan sistem pelaporan internal.
-            """
+        Organisasi perlu memperkuat:
+        - KPI,
+        - evaluasi kinerja,
+        - dan sistem pelaporan internal.
+        """
 
-    else
-
+    else:
         interpretation = """
         Pengawasan komunitas
         dan keselarasan misi organisasi
