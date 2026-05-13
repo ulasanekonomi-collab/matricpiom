@@ -1315,48 +1315,48 @@ elif st.session_state.step == "Design":
             line_close=True
         )
     
-            st.plotly_chart(fig, use_container_width=True)
-            # =========================
-            # RESISTANCE ENGINE
-            # =========================
+        st.plotly_chart(fig, use_container_width=True)
+        # =========================
+        # RESISTANCE ENGINE
+        # =========================
         
-            st.subheader("Institutional Resistance")
+        st.subheader("Institutional Resistance")
         
-            power_resistance = st.slider(
+        power_resistance = st.slider(
                 "Elite / Power Resistance",
                 0, 10, 5
-            )
+        )
         
             institutional_rigidity = st.slider(
                 "Institutional Rigidity",
                 0, 10, 5
-            )
+        )
         
             status_quo_dependency = st.slider(
                 "Status Quo Dependency",
                 0, 10, 5
-            )
+        )
         
-            resistance_score = (
-                power_resistance +
-                institutional_rigidity +
-                status_quo_dependency
-            ) / 3
+        resistance_score = (
+            power_resistance +
+            institutional_rigidity +
+            status_quo_dependency
+        ) / 3
         
-            st.metric(
-                "Resistance Score",
-                round(resistance_score, 2)
-            )
+        st.metric(
+            "Resistance Score",
+            round(resistance_score, 2)
+        )
         
-            # INTERPRETATION
-            if resistance_score <= 3:
-                st.success("Reform feasibility tinggi")
+        # INTERPRETATION
+        if resistance_score <= 3:
+            st.success("Reform feasibility tinggi")
         
-            elif resistance_score <= 6:
-                st.warning("Perlu strategi koalisi dan negosiasi")
+        elif resistance_score <= 6:
+            st.warning("Perlu strategi koalisi dan negosiasi")
         
-            else:
-                st.error("Potensi resistensi politik tinggi")    
+        else:
+            st.error("Potensi resistensi politik tinggi")    
 # =========================
 # OUTPUT
 # =========================
