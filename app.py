@@ -1278,85 +1278,85 @@ elif st.session_state.step == "Simulation":
 
     else:
         st.success("Design sangat efektif mengubah perilaku.")
-
+elif st.session_state.step == "Design":
     # =========================
     # MATRIX
     # =========================
-    st.subheader("PIOM Design Matrix")
-
-    st.table({
-        "Variable": ["Benefit", "Cost", "Information", "Moral"],
-        "Existing": [B1, C1, N1, M1],
-        "After Design": [B2, C2, N2, M2]
-    })
-    # =========================
-    # RADAR CHART
-    # =========================
-
-    st.subheader("Institutional Design Radar")
-
-    radar_df = pd.DataFrame({
-        "Variable": ["Benefit", "Cost", "Information", "Moral"],
-        "Existing": [B1, C1, N1, M1],
-        "After Design": [B2, C2, N2, M2]
-    })
-
-    radar_long = radar_df.melt(
-        id_vars="Variable",
-        var_name="Condition",
-        value_name="Score"
-    )
-
-    fig = px.line_polar(
-        radar_long,
-        r="Score",
-        theta="Variable",
-        color="Condition",
-        line_close=True
-    )
-
-    st.plotly_chart(fig, use_container_width=True)
-    # =========================
-    # RESISTANCE ENGINE
-    # =========================
-
-    st.subheader("Institutional Resistance")
-
-    power_resistance = st.slider(
-        "Elite / Power Resistance",
-        0, 10, 5
-    )
-
-    institutional_rigidity = st.slider(
-        "Institutional Rigidity",
-        0, 10, 5
-    )
-
-    status_quo_dependency = st.slider(
-        "Status Quo Dependency",
-        0, 10, 5
-    )
-
-    resistance_score = (
-        power_resistance +
-        institutional_rigidity +
-        status_quo_dependency
-    ) / 3
-
-    st.metric(
-        "Resistance Score",
-        round(resistance_score, 2)
-    )
-
-    # INTERPRETATION
-    if resistance_score <= 3:
-        st.success("Reform feasibility tinggi")
-
-    elif resistance_score <= 6:
-        st.warning("Perlu strategi koalisi dan negosiasi")
-
-    else:
-        st.error("Potensi resistensi politik tinggi")    
+        st.subheader("PIOM Design Matrix")
+    
+        st.table({
+            "Variable": ["Benefit", "Cost", "Information", "Moral"],
+            "Existing": [B1, C1, N1, M1],
+            "After Design": [B2, C2, N2, M2]
+        })
+        # =========================
+        # RADAR CHART
+        # =========================
+    
+        st.subheader("Institutional Design Radar")
+    
+        radar_df = pd.DataFrame({
+            "Variable": ["Benefit", "Cost", "Information", "Moral"],
+            "Existing": [B1, C1, N1, M1],
+            "After Design": [B2, C2, N2, M2]
+        })
+    
+        radar_long = radar_df.melt(
+            id_vars="Variable",
+            var_name="Condition",
+            value_name="Score"
+        )
+    
+        fig = px.line_polar(
+            radar_long,
+            r="Score",
+            theta="Variable",
+            color="Condition",
+            line_close=True
+        )
+    
+        st.plotly_chart(fig, use_container_width=True)
+        # =========================
+        # RESISTANCE ENGINE
+        # =========================
+    
+        st.subheader("Institutional Resistance")
+    
+        power_resistance = st.slider(
+            "Elite / Power Resistance",
+            0, 10, 5
+        )
+    
+        institutional_rigidity = st.slider(
+            "Institutional Rigidity",
+            0, 10, 5
+        )
+    
+        status_quo_dependency = st.slider(
+            "Status Quo Dependency",
+            0, 10, 5
+        )
+    
+        resistance_score = (
+            power_resistance +
+            institutional_rigidity +
+            status_quo_dependency
+        ) / 3
+    
+        st.metric(
+            "Resistance Score",
+            round(resistance_score, 2)
+        )
+    
+        # INTERPRETATION
+        if resistance_score <= 3:
+            st.success("Reform feasibility tinggi")
+    
+        elif resistance_score <= 6:
+            st.warning("Perlu strategi koalisi dan negosiasi")
+    
+        else:
+            st.error("Potensi resistensi politik tinggi")    
 # =========================
 # OUTPUT
 # =========================
