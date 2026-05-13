@@ -1118,7 +1118,7 @@ else:
 # =========================
 # POWER
 # =========================
-if st.session_state.step == "Power":
+#if st.session_state.step == "Power":
     st.header("Power")
 
     st.text_area("Aktor", key="power_aktor", on_change=autosave)
@@ -1131,7 +1131,7 @@ if st.session_state.step == "Power":
 # =========================
 # INSTITUTION
 # =========================
-elif st.session_state.step == "Institution":
+#elif st.session_state.step == "Institution":
     st.header("Institution")
 
     st.text_area("Formal", key="institution_formal", on_change=autosave)
@@ -1145,7 +1145,7 @@ elif st.session_state.step == "Institution":
 # =========================
 # INCENTIVE
 # =========================
-elif st.session_state.step == "Incentive":
+#elif st.session_state.step == "Incentive":
     st.header("Incentive")
 
     st.text_area("Insentif", key="incentive", on_change=autosave)
@@ -1158,7 +1158,7 @@ elif st.session_state.step == "Incentive":
 # =========================
 # COST
 # =========================
-elif st.session_state.step == "Transaction Cost":
+#elif st.session_state.step == "Transaction Cost":
     st.header("Transaction Cost")
 
     st.text_area("Biaya", key="cost", on_change=autosave)
@@ -1171,7 +1171,7 @@ elif st.session_state.step == "Transaction Cost":
 # =========================
 # BEHAVIOR
 # =========================
-elif st.session_state.step == "Behavior":
+#elif st.session_state.step == "Behavior":
     st.header("Behavior")
 
     st.text_area("Perilaku", key="behavior", on_change=autosave)
@@ -1183,7 +1183,7 @@ elif st.session_state.step == "Behavior":
 # =========================
 # OUTCOME
 # =========================
-elif st.session_state.step == "Outcome":
+#elif st.session_state.step == "Outcome":
     st.header("Outcome")
 
     st.text_area("Outcome", key="outcome", on_change=autosave)
@@ -1194,7 +1194,7 @@ elif st.session_state.step == "Outcome":
 # =========================
 # DESIGN
 # =========================
-elif st.session_state.step == "Design":
+#elif st.session_state.step == "Design":
     st.header("Design")
 
     st.text_area("Solusi", key="design", on_change=autosave)
@@ -1207,7 +1207,7 @@ elif st.session_state.step == "Design":
 # SIMULATION
 # =========================
 
-elif st.session_state.step == "Simulation":
+#elif st.session_state.step == "Simulation":
 
     st.header("PIOM Institutional Design Simulator")
 
@@ -1221,7 +1221,7 @@ elif st.session_state.step == "Simulation":
 
  #   st.subheader("Existing Condition")
 
-    B1 = st.slider("Existing Benefit / Incentive", 0, 10, 2)
+ #   B1 = st.slider("Existing Benefit / Incentive", 0, 10, 2)
     C1 = st.slider("Existing Transaction Cost", 0, 10, 8)
     N1 = st.slider("Existing Information / Framing", 0, 10, 3)
     M1 = st.slider("Existing Moral Support", 0, 10, 3)
