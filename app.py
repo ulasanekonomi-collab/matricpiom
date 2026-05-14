@@ -211,8 +211,7 @@ autoload()
 st.sidebar.title("PIOM Flow")
 
 steps = [
-    "Masalah","Power","Institution","Incentive",
-    "Transaction Cost","Behavior","Outcome","Design","Simulation","Output"
+    "Masalah","Output"
 ]
 
 st.session_state.step = st.sidebar.radio("Langkah Analisis", steps)
