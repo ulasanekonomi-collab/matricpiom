@@ -1058,37 +1058,37 @@ if st.session_state.step == "Masalah":
             - dan evaluasi kinerja institusi.
             """
 
-    elif domain == "Business Organization":
+        elif domain == "Business Organization":
 
-        interpretation = """
-        Sistem monitoring organisasi bisnis
-        masih belum optimal.
+            interpretation = """
+            Sistem monitoring organisasi bisnis
+            masih belum optimal.
 
-        Owner belum memiliki visibilitas
-        yang cukup terhadap
-        perilaku dan performa manager.
+            Owner belum memiliki visibilitas
+            yang cukup terhadap
+            perilaku dan performa manager.
 
-        Organisasi perlu memperkuat:
-        - KPI,
-        - evaluasi kinerja,
-        - dan sistem pelaporan internal.
-        """
+            Organisasi perlu memperkuat:
+            - KPI,
+            - evaluasi kinerja,
+            - dan sistem pelaporan internal.
+            """
 
-    else:
-        interpretation = """
-        Pengawasan komunitas
-        dan keselarasan misi organisasi
-        masih belum cukup kuat.
+        else:
+            interpretation = """
+            Pengawasan komunitas
+            dan keselarasan misi organisasi
+            masih belum cukup kuat.
 
-        Potensi ketidaksesuaian
-        antara tujuan organisasi
-        dan pelaksana lapangan meningkat.
+            Potensi ketidaksesuaian
+            antara tujuan organisasi
+            dan pelaksana lapangan meningkat.
 
-        Diperlukan:
-        - monitoring partisipatif,
-        - transparansi aktivitas,
-        - dan penguatan akuntabilitas sosial.
-        """
+            Diperlukan:
+            - monitoring partisipatif,
+            - transparansi aktivitas,
+            - dan penguatan akuntabilitas sosial.
+            """
 
     elif dominant_failure == "Conflict Intensity":
         interpretation = """
